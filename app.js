@@ -18,8 +18,9 @@ app.get('/', (req, res)=>{
     res.status(200).render('index.hbs',{});
 });
 
-app.get('/ring', (req, res)=>{
-    console.log("Ring - Ring");
+app.post('/ring', (req, res)=>{
+    console.log(`Ring - Ring
+    ${req.body.studentName} is at the Door!`);
     player.play('./sounds/doorbell.mp3', (err)=>{
         if(err) throw err;
     })

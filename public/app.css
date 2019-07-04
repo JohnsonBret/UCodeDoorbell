@@ -1,6 +1,182 @@
+
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(https://www.ucode.com/static/ArticulatCF-Medium_C-55d777d990260b764e422fab40ede24c.otf);
+}
+
+html, body{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #191f6c;
+  font-family: ArticulatCF, sans-serif;
+  color: #ffffff;
+}
+
 main{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    width: 80vh;
-    height: 80vh;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #topBarImg{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+    width: 40%;
+  }
+
+  #ucodeTitleBG{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-color: #ff6b00;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    transform: skewY(-15deg);
+    margin: 0px 50px;
+    z-index: 1;
+    box-shadow: -4px 4px 0px #ffffff; 
+  }
+
+  #ucodeTitle{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: center;
+    writing-mode: sideways-rl;
+    align-self: center;
+    justify-self: center;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    z-index: 2;
+    text-shadow: -2px 2px #191f6c;
+  }
+
+  #instructions{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: end;
+    color:#ff6b00;
+    font-size: 0.6rem;
+  }
+
+  #ringer{
+    display: none;
+    grid-column: 2/3;
+    grid-row: 2/2;
+    margin: 50px;
+    background-color: #ff6b00;
+    color: #ffffff;
+    border: none;
+    box-shadow: -2px -2px 0px #ffffff; 
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    text-shadow: -2px 2px #191f6c;
+  }
+
+  #nameForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2/3;
+    grid-row: 2/2;
+  }
+
+  #nameFormContainer{
+    display: flex;
+    flex-direction: column;
+    /* background-color: #ffffff; */
+    width: 50%;
+    padding: 40px;
+  }
+
+  #buttonContainer{
+    display: flex;
+    justify-content: center;
+  }
+
+  #nameButton{
+    background-color: #ff6b00;
+    color: #ffffff;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  #msgReceived{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2/3;
+    grid-row: 2/2;
+  }
+
+  #msgReceived img{
+    width: 50%;
+  }
+
+  #ucodeOpText{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    text-align: center;
+    writing-mode: sideways-lr;
+    align-self: center;
+    justify-self: center;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    z-index: 2;
+    text-shadow: 2px 2px #191f6c;
+  }
+
+  #ucodeOpTextBG{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background-color: #ff6b00;
+    transform: skewY(15deg);
+    margin: 0px 50px;
+    z-index: 1;
+    box-shadow: 4px 4px 0px #ffffff; 
+  }
+
+  #topBar{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-self: start;
+    justify-self: start;
+  }
+
+  #bottomBar{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-self: end;
+    justify-self: end;
+  }
+
+  #nonResponsive{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    align-self: start;
+    justify-self: end;
+    color:#ff6b00;
+    font-size: 0.6rem;
+  }
+
+  .colorBar{
+    width: 60%;
+    height: 5px;
+    background-color: #ff6b00;
+  }
+
+  button:hover{
+    opacity: 0.8;
+    box-shadow: 2px 2px 0px #ffffff; 
   }
