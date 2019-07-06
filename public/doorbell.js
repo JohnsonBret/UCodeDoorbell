@@ -1,34 +1,51 @@
 async function ring() {
 
-     var nameValue = document.getElementById("nameField").value;
+    var nameValue = document.getElementById("nameField").value;
         
-    const rawResponse = await fetch('/ring', {
-        method: 'POST',
-        headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({studentName: nameValue})
-    });
-    const content = await rawResponse.json()
+    // const rawResponse = await fetch('/ring', {
+    //     method: 'POST',
+    //     headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({studentName: nameValue})
+    // });
+    // const content = await rawResponse.json()
     
-    if(rawResponse.status == 200)
-    {
-        console.log("response status 200");
-        hideDoorbellButton();
-        uCodeOnTheWay();
+    // if(rawResponse.status == 200)
+    // {
+    //     console.log("response status 200");
+    //     hideDoorbellButton();
+    //     uCodeOnTheWay();
 
-        setTimeout(()=>{
-            hideUCodeOnTheWay();
-            showNameForm();
-        }, 7000)
-    }
-    else
-    {
-        showNoConnectionMsg();
-    }
+    //     setTimeout(()=>{
+    //         hideUCodeOnTheWay();
+    //         showNameForm();
+    //     }, 7000)
+    // }
+    // else
+    // {
+    //     showNoConnectionMsg();
+    // }
 
+    let body = JSON.stringify({studentName: nameValue})
 
+    var xhttp = new XMLHttpRequest();
+    
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            hideDoorbellButton();
+            uCodeOnTheWay();
+
+            setTimeout(()=>{
+                hideUCodeOnTheWay();
+                showNameForm();
+            }, 7000)
+        }
+    };
+    xhttp.open("POST", "/ring", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(body);
 
 }
 
