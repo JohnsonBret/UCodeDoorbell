@@ -44,7 +44,7 @@
         align-items: center;
         width: 30%;
         height: 50%;
-        border-radius: 20px;
+        box-shadow: 4px 4px 0px #ffffff;
     }
 
     .card h2, .card p{
@@ -62,5 +62,9 @@
         display: inline-block;
         font-size: 16px;
         margin-bottom: 30px;
-        border-radius: 10px;
+        box-shadow: 2px 2px 0px #ffffff;
+      }
+
+      button:hover{
+        opacity: 0.8;
       }
