@@ -104,6 +104,10 @@ main{
     z-index: 3;
   }
 
+  #nameField{
+    line-height: 1.4;
+  }
+
   #nameFormContainer{
     display: flex;
     flex-direction: column;
