@@ -11,14 +11,25 @@
     const card = document.createElement("div");
     const title = document.createElement("h2");
     const arrivalName = document.createElement("p");
+    const arrivalTime = document.createElement("p");
     const dismissBtn = document.createElement("button")
 
     title.innerHTML = "Student Arrival";
     arrivalName.innerHTML = studentName;
+    
+    let time = new Date(Date.now());
+    var options = { 
+      hour: 'numeric',
+      minute: 'numeric',
+      weekday: 'long'
+    };
+
+    arrivalTime.innerHTML = time.toLocaleDateString('en-US', options);
     dismissBtn.innerHTML = "Dismiss"
 
     card.appendChild(title);
     card.appendChild(arrivalName);
+    card.appendChild(arrivalTime);
     card.appendChild(dismissBtn);
 
     card.classList.add("card");

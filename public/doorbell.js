@@ -53,14 +53,14 @@ const showNoConnectionMsg = ()=>{
     console.log("We didn't get a response");
 }
 
-let ringer = document.getElementById("ringer");
-ringer.addEventListener("click",()=>{
+let doorbell = document.getElementById("doorbellRinger");
+doorbell.addEventListener("click",()=>{
     ring();
     console.log("button clicked");
 });
 
-let nameButton = document.getElementById("nameButton");
-nameButton.addEventListener("click",()=>{
+let nameEntryButton = document.getElementById("nameButton");
+nameEntryButton.addEventListener("click",()=>{
     
     console.log("Name Entered?");
     hideNameForm();
@@ -78,12 +78,12 @@ const hideNameForm = ()=>{
 }
 
 const showDoorbellButton = ()=>{
-    let doorbell = document.getElementById("ringer");
+    let doorbell = document.getElementById("doorbellRinger");
     doorbell.style.display = "block";
 }
 
 const hideDoorbellButton = ()=>{
-    let doorbell = document.getElementById("ringer");
+    let doorbell = document.getElementById("doorbellRinger");
     doorbell.style.display = "none";
 }
 
