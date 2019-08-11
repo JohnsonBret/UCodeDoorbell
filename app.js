@@ -14,7 +14,7 @@ app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res)=>{
     res.status(200).render('index.hbs',{});
