@@ -16,7 +16,7 @@ html, body{
 
 main{
     display: grid;
-    grid-template-columns: 1.8fr 1fr 2.5fr 1fr ;
+    grid-template-columns: 2fr 1fr 2.5fr 1fr ;
     grid-template-rows: 1fr 3fr 1fr;
     width: 100vw;
     height: 100vh;
@@ -41,7 +41,7 @@ main{
     align-self: end;
     justify-self: start;
     z-index: 0;
-    background-position: 30% 50%;
+    background-position: 33% 50%;
     padding-top: 50px;
 
   }
@@ -214,6 +214,10 @@ main{
     justify-self: end;
     color:#ff6b00;
     font-size: 1rem;
+  }
+
+  #nonResponsive a{
+  color: #ffffff;
   }
 
   .colorBar{
