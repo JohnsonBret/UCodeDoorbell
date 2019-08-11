@@ -105,12 +105,12 @@ main{
   }
 
   #nameField{
-    
+    padding: 10px;
   }
 
   #nameField::placeholder{
     font-size: 1.2rem;
-    padding: 10px;
+
   }
 
   #nameFormContainer{
