@@ -34,6 +34,12 @@
         display: flex;
     }
 
+    #allowSound{
+      grid-column: 2/3;
+      grid-row: 2/3;
+      background-color: #ff6b00;
+    }
+
     .card{
         background-color: #ff6b00;
         padding: 30px;

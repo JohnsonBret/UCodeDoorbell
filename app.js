@@ -27,9 +27,10 @@ app.get('/upstairs', (req, res)=>{
 app.post('/ring', (req, res)=>{
     console.log(`Ring - Ring
     ${req.body.studentName} is at the Door!`);
-    player.play('./sounds/doorbell.mp3', (err)=>{
-        if(err) throw err;
-    })
+    // Running locally only
+    // player.play('./public/sounds/doorbell.mp3', (err)=>{
+    //     if(err) throw err;
+    // })
     io.emit('arrival',{studentName: req.body.studentName});
 
     res.status(200).send({

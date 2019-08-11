@@ -1,9 +1,19 @@
 
+  let soundEnableButton = document.getElementById("allowSound");
+
+  soundEnableButton.addEventListener("click", ()=>{
+    soundEnableButton.style.display = "none";
+    // console.log("Turn on sound button clicked");
+  });
+  
+  let doorbellSoundSource = document.getElementById("doorbellSoundPlayer");
+
   var socket = io.connect('http://localhost:3000');
   socket.on('arrival', function (data) {
     console.log(data.studentName);
     // socket.emit('my other event', { my: 'data' });
     createStudentCard(data.studentName)
+    playSound();
   });
 
 
@@ -39,4 +49,9 @@
     });
 
     document.getElementById("root").appendChild(card);
+  }
+
+  const playSound = ()=>{
+    console.log(doorbellSoundSource);
+    doorbellSoundSource.play();
   }
