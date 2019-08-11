@@ -50,6 +50,7 @@
         align-items: center;
         width: 30%;
         height: 50%;
+        font-size: 1.4rem;
         box-shadow: 4px 4px 0px #ffffff;
     }
 
@@ -66,7 +67,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 1.4rem;
         margin-bottom: 30px;
         box-shadow: 2px 2px 0px #ffffff;
       }
