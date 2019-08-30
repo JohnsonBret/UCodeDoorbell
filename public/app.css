@@ -230,3 +230,136 @@ main{
     opacity: 0.8;
     box-shadow: 2px 2px 0px #ffffff; 
   }
+
+  @media only screen and (max-width: 800px) {
+    main{
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-rows: 2fr 1fr 3fr 1fr;
+      width: 100%;
+      height: 100%;
+    }
+  
+    #topBarImg{
+      grid-column: 2/3;
+      grid-row: 2/3;
+      align-self: center;
+      justify-self: center;
+      width: 60%;
+    }
+  
+    #leftImg{
+      grid-column: 1/4;
+      grid-row:  1/2;
+      background-image: url('/index-figure-1_crop.jpg');
+      /* clip-path: polygon(0% 0%, 83.16% 1.17%, 100% 100%, 16.36% 100.29%); */
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      align-self: end;
+      justify-self: start;
+      z-index: 0;
+      background-position: 33% -7%;
+      /* padding-top: 50px; */
+  
+    }
+  
+    #ucodeTitleBG{
+      /* grid-column: 1/2;
+      grid-row: 2/3; */
+      background-color: #ff6b00;
+      grid-column: 1/2;
+      grid-row: 3/4;
+      transform: skewY(-15deg);
+      margin: 0px 50px;
+      z-index: 1;
+      box-shadow: -4px 4px 0px #ffffff; 
+    }
+  
+    #ucodeTitle{
+      grid-column: 1/2;
+      grid-row: 3/4;
+      text-align: center;
+      writing-mode: sideways-rl;
+      align-self: center;
+      justify-self: center;
+      font-size: 3rem;
+      letter-spacing: 10px;
+      z-index: 2;
+      text-shadow: -2px 2px #191f6c;
+    }
+  
+    #instructions{
+      grid-column: 2/3;
+      grid-row: 3/4;
+      align-self: start;
+      color:#ff6b00;
+      font-size: 1rem;
+    }
+  
+    #doorbellRinger{
+      display: none;
+      grid-column: 3/4;
+      grid-row: 3/4;
+      margin: 50px;
+      background-color: #ff6b00;
+      color: #ffffff;
+      border: none;
+      box-shadow: -2px -2px 0px #ffffff; 
+      font-size: 2.6rem;
+      text-transform: uppercase;
+      text-shadow: -2px 2px #191f6c;
+    }
+  
+    #nameForm{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 1.2rem;
+      grid-column: 1/4;
+      grid-row: 3/3;
+      z-index: 3;
+    }
+
+    #leftTriangle{
+      grid-column: 1/3;
+      grid-row: 3/5;
+      z-index: -1;
+      background-color: #ff6b00;
+      -webkit-clip-path: polygon(0% 35%, 0% 100%, 45.00% 100%);
+      clip-path: polygon(0% 35%, 0% 100%, 45.00% 100%);
+    }
+  
+    #rightTriangle{
+      grid-column: 4/5;
+      grid-row: 2/4;
+      z-index: 0;
+      background-color: #ff6b00;
+      -webkit-clip-path: polygon(100% 0%, 45% 0%, 100% 75%);
+      clip-path: polygon(100% 0%, 45% 0%, 100% 75%);
+    }
+
+    #topBar{
+      grid-column: 2/3;
+      grid-row: 3/4;
+      align-self: start;
+      justify-self: start;
+    }
+  
+    #bottomBar{
+      grid-column: 2/3;
+      grid-row: 3/4;
+      align-self: end;
+      justify-self: end;
+    }
+  
+    #nonResponsive{
+      grid-column: 1/4;
+      grid-row: 4/5;
+      align-self: center;
+      justify-self: center;
+      color:#ff6b00;
+      font-size: 1rem;
+    }
+  }
