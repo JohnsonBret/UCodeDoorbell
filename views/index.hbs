@@ -8,6 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="app.css">
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </head>
     <main>
         <img id="topBarImg" src="/UCode_Logo.png">
@@ -38,6 +39,18 @@
         <p id="nonResponsive">iPad not working? Call us <a class="tel" tabIndex="-1" href="tel:888-888-8681">888-888-8681</a></p>
         {{!-- <div id="ucodeOpTextBG"></div>
         <h1 id="ucodeOpText">UCODE</h1> --}}
+
+        <div id="settingsContainer">
+            <h1 id="settingsTitle">Settings</h1>
+            <h1 id="settingsBackBtn"><i class="fas fa-angle-double-left"></i> Back</h1> 
+
+            <div id="locationsContainer">
+                <button class="locationButton" data-location="MBT">Manhattan Beach</button>
+                <button class="locationButton" data-location="LCF">La Canada</button>
+                <button class="locationButton" data-location="PAS">Pasedena</button>
+            </div>
+
+        </div>
     </main>
     <script src="doorbell.js"></script>
 </body>

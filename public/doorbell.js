@@ -28,7 +28,10 @@ async function ring() {
     //     showNoConnectionMsg();
     // }
 
-    let body = JSON.stringify({studentName: nameValue})
+    let body = JSON.stringify({
+        studentName: nameValue,
+        locationName: localStorage.getItem("location")
+    })
 
     var xhttp = new XMLHttpRequest();
     
@@ -67,6 +70,28 @@ nameEntryButton.addEventListener("click",()=>{
     showDoorbellButton();
 });
 
+let settingsLogo = document.getElementById("topBarImg");
+settingsLogo.addEventListener("click", ()=>{
+    console.log("Click settings logo");
+    showSettings();
+});
+
+let settingsBack = document.getElementById("settingsBackBtn");
+settingsBack.addEventListener("click", ()=>{
+    hideSettings();
+});
+
+let locationButton = document.getElementsByClassName("locationButton");
+for(let i = 0; i < locationButton.length; i++)
+{
+    locationButton[i].addEventListener("click", (evt)=>{
+        let locationAbv = evt.target.getAttribute("data-location");
+        console.log(`Location click ${locationAbv}`);
+        localStorage.setItem("location", locationAbv);
+
+    });
+}
+
 const showNameForm = ()=>{
     let nameForm = document.getElementById("nameForm");
     nameForm.style.display = "flex";
@@ -95,5 +120,15 @@ const uCodeOnTheWay = ()=>{
 const hideUCodeOnTheWay = ()=>{
     let onTheWay = document.getElementById("msgReceived");
     onTheWay.style.display = "none";
+}
+
+const showSettings = ()=>{
+    let settingsDiv = document.getElementById("settingsContainer");
+    settingsDiv.style.display = "grid";
+}
+
+const hideSettings = ()=>{
+    let settingsDiv = document.getElementById("settingsContainer");
+    settingsDiv.style.display = "none";
 }
 

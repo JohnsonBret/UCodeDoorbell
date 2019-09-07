@@ -9,11 +9,18 @@
   let doorbellSoundSource = document.getElementById("doorbellSoundPlayer");
 
   var socket = io.connect('https://ucode-doorbell.herokuapp.com/');
+  // var socket = io.connect('localhost:3000');
   socket.on('arrival', function (data) {
-    console.log(data.studentName);
-    // socket.emit('my other event', { my: 'data' });
-    createStudentCard(data.studentName)
-    playSound();
+
+    if(data.locationName == localStorage.getItem("location"))
+    {
+      console.log(data.studentName);
+      // socket.emit('my other event', { my: 'data' });
+      createStudentCard(data.studentName)
+      playSound();
+    }
+
+    
   });
 
 

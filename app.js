@@ -25,13 +25,22 @@ app.get('/upstairs', (req, res)=>{
 });
 
 app.post('/ring', (req, res)=>{
+
+    let postLocation = req.body.locationName;
+
     console.log(`Ring - Ring
-    ${req.body.studentName} is at the Door!`);
+    ${req.body.studentName} is at the Door!
+    Location ${postLocation}`);
+    
+
     // Running locally only
     // player.play('./public/sounds/doorbell.mp3', (err)=>{
     //     if(err) throw err;
     // })
-    io.emit('arrival',{studentName: req.body.studentName});
+    io.emit('arrival',{
+        studentName: req.body.studentName,
+        locationName: postLocation
+    });
 
     res.status(200).send({
         ringReceived: true
