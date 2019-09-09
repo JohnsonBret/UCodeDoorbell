@@ -1,3 +1,5 @@
+
+
 async function ring() {
 
     var nameValue = document.getElementById("nameField").value;
@@ -88,7 +90,7 @@ for(let i = 0; i < locationButton.length; i++)
         let locationAbv = evt.target.getAttribute("data-location");
         console.log(`Location click ${locationAbv}`);
         localStorage.setItem("location", locationAbv);
-
+        getCurrentLocation();
     });
 }
 
@@ -132,3 +134,10 @@ const hideSettings = ()=>{
     settingsDiv.style.display = "none";
 }
 
+const getCurrentLocation = ()=>{
+    let currLocation = document.getElementById("settingsCurrentLocation");
+    let storedLocation = localStorage.getItem("location");
+    currLocation.innerHTML = `Location: ${storedLocation}`;
+}
+
+getCurrentLocation();
