@@ -44,6 +44,7 @@ async function ring() {
 
             setTimeout(()=>{
                 hideUCodeOnTheWay();
+                clearNameInput();
                 showNameForm();
             }, 7000)
         }
@@ -123,6 +124,10 @@ const hideUCodeOnTheWay = ()=>{
     let onTheWay = document.getElementById("msgReceived");
     onTheWay.style.display = "none";
 }
+
+const clearNameInput = ()=>{
+    document.getElementById("nameField").value = "";
+};
 
 const showSettings = ()=>{
     let settingsDiv = document.getElementById("settingsContainer");
