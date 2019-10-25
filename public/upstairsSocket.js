@@ -62,3 +62,43 @@
     console.log(doorbellSoundSource);
     doorbellSoundSource.play();
   }
+
+  const showSettings = ()=>{
+    let settingsDiv = document.getElementById("settingsContainer");
+    settingsDiv.style.display = "grid";
+  }
+
+  const hideSettings = ()=>{
+      let settingsDiv = document.getElementById("settingsContainer");
+      settingsDiv.style.display = "none";
+  }
+
+  const getCurrentLocation = ()=>{
+    let currLocation = document.getElementById("settingsCurrentLocation");
+    let storedLocation = localStorage.getItem("location");
+    currLocation.innerHTML = `Location: ${storedLocation}`;
+  }
+
+  getCurrentLocation();
+
+  let settingsLogo = document.getElementById("topBarImg");
+  settingsLogo.addEventListener("click", ()=>{
+      console.log("Click settings logo");
+      showSettings();
+  });
+
+  let settingsBack = document.getElementById("settingsBackBtn");
+  settingsBack.addEventListener("click", ()=>{
+      hideSettings();
+  });
+
+  let locationButton = document.getElementsByClassName("locationButton");
+  for(let i = 0; i < locationButton.length; i++)
+  {
+      locationButton[i].addEventListener("click", (evt)=>{
+          let locationAbv = evt.target.getAttribute("data-location");
+          console.log(`Location click ${locationAbv}`);
+          localStorage.setItem("location", locationAbv);
+          getCurrentLocation();
+      });
+  }

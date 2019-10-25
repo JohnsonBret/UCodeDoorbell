@@ -6,6 +6,7 @@
             You need Javascript to run this page
         </noscript>
         <link rel="stylesheet" href="upstairs.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -14,6 +15,19 @@
         <div id="root"></div>
         <button id="allowSound">Turn on Ringer</button>
         <audio id="doorbellSoundPlayer" src="/sounds/doorbell.mp3"></audio>
+        <div id="settingsContainer">
+            <h2 id="settingsTitle"><i class="fas fa-bars"></i>  Settings</h2>
+            <h2 id="settingsBackBtn"><i class="fas fa-angle-double-left"></i>  Back</h2> 
+            <h1 id="settingsCurrentLocation"></h1>
+
+            <div id="locationsContainer">
+                <button class="locationButton" data-location="MBT">Manhattan Beach</button>
+                <button class="locationButton" data-location="LCF">La Canada</button>
+                <button class="locationButton" data-location="PAS">Pasedena</button>
+                <button class="locationButton" data-location="SM">Santa Monica</button>
+            </div>
+
+        </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="/upstairsSocket.js"></script>
