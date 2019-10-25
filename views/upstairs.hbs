@@ -31,5 +31,14 @@
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="/upstairsSocket.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+        OneSignal.init({
+        appId: "2e62a2dc-a32b-4663-a501-803eda4c5c6c",
+        });
+    });
+    </script>
 </body>
 </html>
