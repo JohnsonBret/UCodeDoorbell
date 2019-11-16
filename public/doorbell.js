@@ -41,6 +41,7 @@ async function ring() {
         if (this.readyState == 4 && this.status == 200) {
             hideDoorbellButton();
             uCodeOnTheWay();
+            clearTimeout(noRingTimeout);
 
             setTimeout(()=>{
                 hideUCodeOnTheWay();
@@ -65,12 +66,19 @@ doorbell.addEventListener("click",()=>{
     console.log("button clicked");
 });
 
+let noRingTimeout;
+
 let nameEntryButton = document.getElementById("nameButton");
 nameEntryButton.addEventListener("click",()=>{
     
     console.log("Name Entered?");
     hideNameForm();
     showDoorbellButton();
+    noRingTimeout = setTimeout(()=>{
+        clearNameInput();
+        hideDoorbellButton();
+        showNameForm();
+    }, 10000)
 });
 
 let settingsLogo = document.getElementById("topBarImg");
