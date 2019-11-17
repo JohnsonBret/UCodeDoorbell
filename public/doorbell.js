@@ -47,7 +47,7 @@ async function ring() {
                 hideUCodeOnTheWay();
                 clearNameInput();
                 showNameForm();
-            }, 7000)
+            }, 15000)
         }
     };
     xhttp.open("POST", "/ring", true);
