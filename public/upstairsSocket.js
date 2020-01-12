@@ -76,6 +76,12 @@
   const getCurrentLocation = ()=>{
     let currLocation = document.getElementById("settingsCurrentLocation");
     let storedLocation = localStorage.getItem("location");
+
+    if(storedLocation == null)
+    {
+        showSettings();
+    }
+
     currLocation.innerHTML = `Location: ${storedLocation}`;
   }
 
